@@ -5,14 +5,13 @@ from PyQt5.QtWidgets import QWidget, QFileDialog, QApplication, QVBoxLayout, QPu
 
 class filedialog(QWidget):
     def __init__(self):
-        super(filedialog,self).__init__()
+        super(filedialog, self).__init__()
 
         layout = QVBoxLayout()
         self.btn = QPushButton("SELECCIONA ARCHIVO EN CARPETA")
         self.btn.clicked.connect(self.getfile)
 
         layout.addWidget(self.btn)
-        
         self.setLayout(layout)
         self.setWindowTitle("File Dialog demo")
 
@@ -51,8 +50,9 @@ def lista_archivos(ruta):
     for elemento in contenido:
         if elemento.is_file() and elemento.name.endswith(".dxf"):
             listado.append(elemento.name[:49].split(".")[0])
-            
+
     print(listado)
+
 
 def main():
     """
